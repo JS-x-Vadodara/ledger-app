@@ -5,6 +5,7 @@ import { Client } from "@notionhq/client";
 interface NotionProperty {
   id: string;
   type: string;
+  unique_id?: { number: number };
   number?: number;
   title?: { text: { content: string } }[];
   rich_text?: { text: { content: string } }[];
