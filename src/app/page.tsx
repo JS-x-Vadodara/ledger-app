@@ -1,4 +1,4 @@
-import { NotionService } from "../services/notion-service";
+import { NotionService } from '../services/notion-service';
 
 export default async function Home() {
   const notionService = new NotionService(
@@ -14,9 +14,7 @@ export default async function Home() {
   return (
     <div>
       <div className="flex py-12 w-full justify-center items-center">
-        <div className="text-4xl">
-          JS x Vadodara
-        </div>
+        <div className="text-4xl">JS x Vadodara</div>
       </div>
       <div className="space-y-8">
         <div className="flex w-full justify-evenly">
@@ -61,19 +59,22 @@ export default async function Home() {
                     </td>
                     {/* Date */}
                     <td className="px-4 py-2 border border-gray-700 text-left">
-                      {item?.properties?.Date?.date?.start || "N/A"}
+                      {item?.properties?.Date?.date?.start || 'N/A'}
                     </td>
                     {/* Title */}
                     <td className="px-4 py-2 border border-gray-700 text-left">
-                      {item?.properties?.Title?.title?.[0]?.text?.content || "-"}
+                      {item?.properties?.Title?.title?.[0]?.text?.content ||
+                        '-'}
                     </td>
                     {/* Category */}
                     <td className="px-4 py-2 border border-gray-700 text-left">
-                      {item?.properties?.Category?.rich_text?.[0]?.text?.content || "-"}
+                      {item?.properties?.Category?.rich_text?.[0]?.text
+                        ?.content || '-'}
                     </td>
                     {/* Note */}
                     <td className="px-4 py-2 border border-gray-700 text-left">
-                      {item?.properties?.Note?.rich_text?.[0]?.text?.content || "-"}
+                      {item?.properties?.Note?.rich_text?.[0]?.text?.content ||
+                        '-'}
                     </td>
                     {/* Income */}
                     <td className="px-4 py-2 border border-gray-700 text-left">
@@ -87,7 +88,9 @@ export default async function Home() {
                 ))
               ) : (
                 <tr>
-                  <td colSpan={7} className="text-center p-4">No data available</td>
+                  <td colSpan={7} className="text-center p-4">
+                    No data available
+                  </td>
                 </tr>
               )}
             </tbody>

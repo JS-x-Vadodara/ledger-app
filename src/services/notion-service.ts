@@ -1,6 +1,6 @@
-"use strict";
+'use strict';
 
-import { Client } from "@notionhq/client";
+import { Client } from '@notionhq/client';
 
 interface NotionProperty {
   id: string;
@@ -41,7 +41,7 @@ export class NotionService {
    */
   constructor(authToken: string, databaseId: string) {
     if (!authToken || !databaseId) {
-      throw new Error("Authentication token and database ID are required.");
+      throw new Error('Authentication token and database ID are required.');
     }
     this.client = new Client({ auth: authToken });
     this.databaseId = databaseId;
@@ -55,14 +55,14 @@ export class NotionService {
     try {
       const response = await this.client.databases.query({
         database_id: this.databaseId,
-        sorts: [{ property: "Date", direction: "ascending" }],
+        sorts: [{ property: 'Date', direction: 'ascending' }],
       });
 
       this.data = response.results as NotionPage[];
       return this.data;
     } catch (error) {
-      console.error("Error fetching data from Notion:", error);
-      throw new Error("Failed to fetch data from Notion.");
+      console.error('Error fetching data from Notion:', error);
+      throw new Error('Failed to fetch data from Notion.');
     }
   }
 
@@ -72,12 +72,12 @@ export class NotionService {
    */
   getTotalIncome(): number {
     if (!this.data.length) {
-      console.warn("Data is empty. Fetch data before calculating income.");
+      console.warn('Data is empty. Fetch data before calculating income.');
       return 0;
     }
 
     return this.data.reduce((acc, item) => {
-      const income = item.properties?.["Income"]?.number || 0;
+      const income = item.properties?.['Income']?.number || 0;
       return acc + income;
     }, 0);
   }
@@ -88,7 +88,7 @@ export class NotionService {
    */
   getTotalExpense(): number {
     if (!this.data.length) {
-      console.warn("Data is empty. Fetch data before calculating expenses.");
+      console.warn('Data is empty. Fetch data before calculating expenses.');
       return 0;
     }
 
