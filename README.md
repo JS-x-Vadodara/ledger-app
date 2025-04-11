@@ -4,7 +4,7 @@ Welcome to the official open-source **Ledger App** by **JSxVadodara** — a Java
 
 ## 🚀 Getting Started Locally
 
-Want to run the project on your local machine? Follow these steps:
+To set up the project locally, follow these steps:
 
 ### 1. Clone the repository
 
@@ -21,7 +21,24 @@ npm install
 yarn install
 ```
 
-### 3. Run the development server
+### 3. Configure environment variables
+
+- Copy the example environment file:
+
+```bash
+cp .env.example .env.local
+```
+
+- Then update `.env.local` with the following demo Notion credentials:
+
+```env
+NOTION_CLIENT_ID=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
+NOTION_DATABASE_ID=1885b98676a1804cbabdc2896dbda04d
+```
+
+> ℹ️ These are **demo values**. For production use, replace with actual Notion integration credentials.
+
+### 4. Run the development server
 
 ```bash
 npm run dev
