@@ -13,8 +13,11 @@ export default async function Home() {
 
   return (
     <div>
-      <div className="flex py-12 w-full justify-center items-center">
-        <div className="text-4xl">JS x Vadodara</div>
+      <div className="flex py-10 w-full justify-center items-center">
+        <div className="text-center space-y-4">
+          <div className="text-4xl">JS x Vadodara</div>
+          <p className="text-2xl">Sample data</p>
+        </div>
       </div>
       <div className="space-y-8">
         <div className="flex w-full justify-evenly">
